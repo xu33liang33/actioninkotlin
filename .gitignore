@@ -1,0 +1,49 @@
+## eclipse
+.project
+.classpath
+
+## idea
+.idea
+/.idea
+*.iml
+
+## Mac os
+.DS_Store
+
+## gradle
+.gradle
+.settings
+build
+gradle.properties
+settings.gradle
+
+## vscode
+.vscode
+
+## python
+*.pyc
+
+## temp file
+*.*~
+
+## lanxin prop
+version.properties
+local.properties
+
+## lanxin output
+captures
+productions
+
+
+## build system
+/buildsystem/flavor
+/buildsystem/abi.gradle
+/buildsystem/flavors.gradle
+/buildsystem/cfg
+
+## config
+/config/user-config.json
+/config/project-modules-local.json
+
+/out
+
