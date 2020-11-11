@@ -7,12 +7,13 @@ import chapter02.leishuxing.Person
  *
  */
 data class ClientData(val name: String, val postalCode: Int) {
-//    object NameComparator : Comparator<Person> {
-//        override fun compare(o1: Person, o2: Person): Int {
-//            return o1.name.compareTo(o2.name)
-//        }
-//    }
-//    fun copy1(name: String = this.name, postalCode: Int = this.postalCode) = ClientData(name, postalCode)
+    object NameComparator : Comparator<Person> {
+        override fun compare(o1: Person, o2: Person): Int {
+            return o1.name.compareTo(o2.name)
+        }
+    }
+
+    fun copy1(name: String = this.name, postalCode: Int = this.postalCode) = ClientData(name, postalCode)
 }
 
 fun main(args: Array<String>) {
