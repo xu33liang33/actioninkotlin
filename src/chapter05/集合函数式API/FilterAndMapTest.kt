@@ -125,6 +125,7 @@ fun main(args: Array<String>) {
 
     //统计所有作者
     val result = listBook.flatMap { it.anthors }.toSet()
+    println("------------------------------------flatMap------------------------------------")
     println(result)
 
     val strings = listOf("abc", "abcdef")
