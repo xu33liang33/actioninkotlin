@@ -27,12 +27,14 @@ fun main(args: Array<String>) {
      */
     val result = list.slice(1..4)
     val result1 = list.subList(1, 4)
-    println(result)
+    println("result: ${result}")
+    println("result1: ${result1}")
     list.filter {
         it % 2 == 0
     }
 
-    val letters = ('a'..'z').toList()
+    val letters = ('A'..'z').toList()
+    println("letters: ${letters}")
     println(letters.size)
     println(letters.slice<Char>(0..2))// <Char>可以省略
     println(letters.slice(10..15))// <Char>可以省略
@@ -62,11 +64,12 @@ fun main(args: Array<String>) {
      * 星号投影
      */
     if (list is List<*>) {
-        list.sum()
+        val aaa = list.sum()
+        println("aaa: $aaa")
     }
 
     if (list is Set<*>) {
-
+        println("list is Set<*>")
     }
 }
 //

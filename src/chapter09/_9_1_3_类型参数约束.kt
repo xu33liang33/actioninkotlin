@@ -27,7 +27,9 @@ fun main(args: Array<String>) {
     val a = max("a", "b")
     val b = "a".compareTo("b")
     println('a'.toFloat())
-    println('b'.toFloat())
+    println('z'.toFloat())
+    println('A'.toFloat())
+    println('Z'.toFloat())
     println("$a | $b")
 
 

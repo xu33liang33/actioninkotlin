@@ -5,11 +5,13 @@ package chapter09
  *Comparable 源码 in
  */
 fun main(args: Array<String>) {
-    val list = listOf(1, 2, 3, 4, 2, 3, 5, 8, 0)
+    val list = listOf(111, 222, 33, 42, 2, 3, 5, 8, 0)
     println(list.sorted())
 
     val anyComparator = Comparator<Any> { e1, e2 ->
+        println("$e1: ${e1.hashCode()} || $e2: ${e2.hashCode()}")
         e1.hashCode() - e2.hashCode()
+
     }
 
     /**
@@ -19,6 +21,7 @@ fun main(args: Array<String>) {
      */
     val listS = listOf<String>("qw", "ru", "zxz", "fbf", "sda", "asd")
     println(listS.sortedWith(anyComparator))
+    println(list.sortedWith(anyComparator))
 
 
     /**

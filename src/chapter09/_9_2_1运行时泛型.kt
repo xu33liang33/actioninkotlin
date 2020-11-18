@@ -13,17 +13,18 @@ fun main(args: Array<String>) {
     /**
      * list1 list2 的String 和 Int 会被擦除，
      */
-    val list1 :List<String> = listOf("a","b")
-    val list2 :List<Int> = listOf(1,2,3)
+    val list1: List<String> = listOf("a", "b")
+    val list2: List<Int> = listOf(1, 2, 3)
 
     /**
      * 星号投影 * -----来检查是不是一个列表～～
      *
      * 拥有未知类型实参的泛型类型---java：List<?>
      */
-    if(list1 is List<String>){
-        println("checked")
+    if (list1 is List<String>) {
+        println("checked001")
     }
+
 
     /**
      * 星号投影～
@@ -31,8 +32,8 @@ fun main(args: Array<String>) {
      * 不关注list内部东西，判断是否是 list
      *
      */
-    if(list1 is List<*>){
-        println("checked")
+    if (list1 is List<*>) {
+        println("checked002")
     }
 
     printSum(listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))

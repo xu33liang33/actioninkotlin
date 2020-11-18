@@ -15,8 +15,10 @@ fun main(args: Array<String>) {
     val any = mutableListOf<Any>()
 
 //    copyData(list,any)
-    copyData2(list, any)
+//    copyData2(list, any)
 //    copyData2(any,list)
+//    copyData3(any,list)
+    copyData3(list,any)
     println(any)
 
 
