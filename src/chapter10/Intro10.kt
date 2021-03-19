@@ -57,10 +57,37 @@ data class PersonIntro10(
  * ReplaceWith 加强了Deprecated的用法
  * IDE 会直接提示你并更换好
  */
-@Deprecated("Deprecated", ReplaceWith("oleioleiolei(index)"))
+@MyDeprecated("Deprecated", ReplaceWith("oleioleiolei(index)"))
 fun ggo() {
     @Suppress("UNCHECKED_CAST")
     val a = ""
+
+}
+
+/**
+ * Marks the annotated class, function, property, variable or parameter as deprecated.
+ * @property message the message explaining the deprecation and recommending an alternative API to use.
+ * @property replaceWith if present, specifies a code fragment which should be used as a replacement for
+ *     the deprecated API usage.
+ */
+@Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY, AnnotationTarget.ANNOTATION_CLASS, AnnotationTarget.CONSTRUCTOR, AnnotationTarget.PROPERTY_SETTER, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.TYPEALIAS)
+@MustBeDocumented
+annotation class MyDeprecated(
+        val message: String,
+        val replaceWith: ReplaceWith = ReplaceWith(""),
+        val level: DeprecationLevel = DeprecationLevel.WARNING
+)
+
+
+class HasTempFolder {
+
+//    @get:Rule
+//    val folder = TemporyFolder()
+//
+//    @Test
+//    fun testUsingTempFolder() {
+//
+//    }
 
 }
 
@@ -77,6 +104,7 @@ fun ggo() {
  * 把另一个注解类指定为实参，去掉注解名称前的@
  * 把数组指定为实参---用" arrayOf " @RequestMapping(path = arrayOf("/foo","/bar"))
  *
+ * 注解实参需要在编译器就是已知的
  * Only 'const val' can be used in constant expressions
  *
  */
@@ -95,9 +123,45 @@ fun ggo() {
  *  setparam----属性 setter 的参数
  *  delegate----为委托属性存储委托实例的字段
  *  file--------包含在文件中声明的顶层函数和属性的类
- *  （应用到file的注解必须放到文件顶层，package 指定之前）
+ *  (应用到file的注解必须放到文件顶层，package 指定之前)
  *
  */
+/**
+ * Contains the list of code elements which are the possible annotation targets
+ */
+enum class AnnotationTarget001 {
+    /** Class, interface or object, annotation class is also included */
+    CLASS,
+    /** Annotation class only */
+    ANNOTATION_CLASS,
+    /** Generic type parameter (unsupported yet) */
+    TYPE_PARAMETER,
+    /** Property */
+    PROPERTY,
+    /** Field, including property's backing field */
+    FIELD,
+    /** Local variable */
+    LOCAL_VARIABLE,
+    /** Value parameter of a function or a constructor */
+    VALUE_PARAMETER,
+    /** Constructor only (primary or secondary) */
+    CONSTRUCTOR,
+    /** Function (constructors are not included) */
+    FUNCTION,
+    /** Property getter only */
+    PROPERTY_GETTER,
+    /** Property setter only */
+    PROPERTY_SETTER,
+    /** Type usage */
+    TYPE,
+    /** Any expression */
+    EXPRESSION,
+    /** File */
+    FILE,
+    /** Type alias */
+    @SinceKotlin("1.1")
+    TYPEALIAS
+}
 
 
 /**
@@ -105,16 +169,7 @@ fun ggo() {
  * @JvmName 将改变由Kotlin生成的Java方法或字段的名称
  * @JvmStatic 用在对象声明或 伴生对象的方法上，把他们暴露成Java的静态方法
  *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
  */
+
 
 
